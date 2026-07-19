@@ -35,8 +35,11 @@ def sample_input_features(key, batch_size, num_features):
     """Sample a (batch_size, num_features) standard-normal feature batch."""
     return sample_normal_matrix(key, (batch_size, num_features))
 
-# Step 5 - assign_class_labels (not yet solved)
-# TODO: implement
+# Step 5 - assign_class_labels
+import jax.numpy as jnp
+
+def assign_class_labels(inputs, num_classes):
+    return jnp.argmax(inputs[:, :num_classes], axis=1)
 
 # Step 6 - one_hot_encode_labels (not yet solved)
 # TODO: implement
