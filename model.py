@@ -25,7 +25,6 @@ import jax
 import jax.numpy as jnp
 
 def sample_normal_matrix(key, shape):
-    # TODO: return a jnp array of the given shape with i.i.d. N(0,1) samples drawn from key
     return jax.random.normal(key, shape)
 
 # Step 4 - sample_input_features (not yet solved)
