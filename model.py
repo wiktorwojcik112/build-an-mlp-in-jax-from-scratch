@@ -41,8 +41,17 @@ import jax.numpy as jnp
 def assign_class_labels(inputs, num_classes):
     return jnp.argmax(inputs[:, :num_classes], axis=1)
 
-# Step 6 - one_hot_encode_labels (not yet solved)
-# TODO: implement
+# Step 6 - one_hot_encode_labels
+import jax
+import jax.numpy as jnp
+
+def one_hot_encode_labels(labels, num_classes):
+    def generate_label_arr(label, num_classes):
+        arr = jnp.zeros((num_classes,))
+        arr = arr.at[label].set(1.0)
+        return arr
+
+    return jax.vmap(lambda label: generate_label_arr(label, num_classes))(labels)
 
 # Step 7 - init_linear_layer (not yet solved)
 # TODO: implement
