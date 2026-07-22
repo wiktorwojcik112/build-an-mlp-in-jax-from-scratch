@@ -66,7 +66,6 @@ def init_linear_layer(key, in_dim, out_dim, scale=0.1):
 
 # Step 8 - init_mlp_params
 def init_mlp_params(key, layer_sizes, scale=0.1):
-    # TODO: build a list of per-layer parameter dicts from adjacent layer sizes.
     layer_len = len(layer_sizes)
     subkeys = split_prng_key(key, layer_len)
     layers = []
