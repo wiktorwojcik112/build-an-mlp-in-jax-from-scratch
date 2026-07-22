@@ -104,6 +104,7 @@ def softmax_probabilities(logits):
 def mlp_forward(params, x):
     t = x
     params_len = len(params)
+    
     for i, layer in enumerate(params):
         t = linear_forward(t, layer)
         if i < params_len - 1:
