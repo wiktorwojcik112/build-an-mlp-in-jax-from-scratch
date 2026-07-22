@@ -81,8 +81,14 @@ def init_mlp_params(key, layer_sizes, scale=0.1):
 def linear_forward(x, layer_params):
     return x @ layer_params['W'] + layer_params['b']
 
-# Step 10 - relu_activation (not yet solved)
-# TODO: implement
+# Step 10 - relu_activation
+import jax.numpy as jnp
+
+1
+def relu_activation(x):
+    """Apply the ReLU activation elementwise to a JAX array."""
+    x = x.at[x < 0].set(0)
+    return x
 
 # Step 11 - softmax_probabilities (not yet solved)
 # TODO: implement
