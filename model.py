@@ -90,8 +90,15 @@ def relu_activation(x):
     x = x.at[x < 0].set(0)
     return x
 
-# Step 11 - softmax_probabilities (not yet solved)
-# TODO: implement
+# Step 11 - softmax_probabilities
+import jax.numpy as jnp
+
+def softmax_probabilities(logits):
+    max_logit = jnp.max(logits, axis=-1, keepdims=True)
+    numerator = jnp.exp(logits - jnp.max(logits, axis=-1, keepdims=True))
+    denominator = jnp.sum(numerator, axis=-1, keepdims=True)
+
+    return numerator/denominator
 
 # Step 12 - mlp_forward (not yet solved)
 # TODO: implement
