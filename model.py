@@ -114,7 +114,6 @@ def mlp_forward(params, x):
 
 # Step 13 - log_softmax_logits
 def log_softmax_logits(logits):
-    # TODO: return the numerically stable log-softmax of logits along the last axis.
     t = jnp.log(softmax_probabilities(logits))
     return t
 
