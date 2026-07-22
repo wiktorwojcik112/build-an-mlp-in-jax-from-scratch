@@ -59,7 +59,6 @@ import jax.numpy as jnp
 
 def init_linear_layer(key, in_dim, out_dim, scale=0.1):
     """Return {'W': (in_dim, out_dim), 'b': (out_dim,)} for one dense layer."""
-    # TODO: sample W from a scaled normal and set b to zeros, return as a dict.
     W = sample_normal_matrix(key, (in_dim, out_dim)) * scale
     b = jnp.zeros(shape=(out_dim,))
 
